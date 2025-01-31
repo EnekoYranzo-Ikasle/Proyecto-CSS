@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    color-scheme: light dark;
+
+    --light-bg: linear-gradient(135deg, #e6e6e6, #dcdcdc, #a6a6a6), #e6e6e6;
+    --dark-bg: linear-gradient(135deg, #0a0a0a, #2a2a2a, #5f5f5f), #0a0a0a;
+
+    --light-secondary: #d3d3d3;
+    --dark-secondary: #5c5c5c;
+
+    --light-third: #bdbdbd;
+    --dark-third: #525252;
+
+    --light-color: black;
+    --dark-color:  #d1d1d1;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 98vh;
+    background-color: light-dark(var(--light-bg), var(--dark-bg));
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 150px;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+a {
+    background-color: light-dark(var(--light-secondary), var(--dark-secondary));
+    padding: 10px 30px 10px 30px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: light-dark(var(--light-color), var(--dark-color));
+    transition: 0.2s all ease-in-out;
+}
+
+a:hover {
+    background-color: light-dark(var(--light-third), var(--dark-third));
+}
