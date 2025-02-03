@@ -1,5 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/********************** Importar Tipografias **********************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); /*Letra  Poppins*/
 
+
+/********************** Declaracion de Variables **********************/
 :root {
     color-scheme: light dark;
 
@@ -9,10 +12,8 @@
 
     --dark-bg: #2e2e2e;
     --dark-color:  #d1d1d1;
-    --dark-secondary: #5c5c5c;
-    
+    --dark-secondary: #5c5c5c; 
 }
-  
 
 html {
     height: 100%;
@@ -39,6 +40,7 @@ body {
     }
 }
 
+/********************** Cabecera **********************/
 header {
     display: flex;
     justify-content: center;
@@ -53,6 +55,7 @@ header > h1 {
     color: white;
 }
 
+/********************** Menú de navegación **********************/
 nav {
     display: flex;
     justify-content: center;
@@ -92,6 +95,7 @@ nav li:nth-child(1) > a{
     color: black;
 }
 
+/*********** Menú tamaño PC ***********/
 .default-navbar {
     max-width: 550px;
     position: fixed;
@@ -108,6 +112,7 @@ nav li:nth-child(1) > a{
     border-radius: 20px;
 }
 
+/*********** Menú tamaño Movil ***********/
 .dynamic-navbar {
     display: none;
 }
@@ -166,12 +171,13 @@ nav li:nth-child(1) > a{
     margin-top: 5px;
 }
 
-
+/********************** Main **********************/
 main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 35vh;
+    height: auto;
+    padding-bottom: 20px;
     background-color: light-dark(var(--light-bg), var(--dark-bg));
     border-radius: 50px 50px 0 0;
 }
@@ -182,6 +188,7 @@ main {
     text-align: center;
 }
 
+/*********** Servicios ***********/
 .listaServicios {
     display: flex;
     list-style: none;
@@ -197,6 +204,7 @@ main {
     border-radius: 20px;
 }
 
+/********************** Separador **********************/
 .separador {
     display: flex;
     justify-content: center;
@@ -213,10 +221,11 @@ main {
     background-color: light-dark(var(--light-secondary), var(--dark-secondary));
 }
 
+/********************** Footer **********************/
 footer {
     display: flex;
     justify-content: space-between;
-    height: 15vh;
+    height: auto;
     padding: 20px;
     background-color: light-dark(var(--light-bg), var(--dark-bg));
 }
