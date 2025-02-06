@@ -168,9 +168,32 @@ main {
     flex-direction: column;
     height: auto;
     margin-top: 100px;
-    padding-bottom: 20px;
+    padding: 20px;
     background-color: light-dark(var(--light-bg), var(--dark-bg));
     border-radius: 50px 50px 0 0;
+}
+
+table {
+    table-layout: fixed;
+    text-align: left;
+}
+
+th {
+    width: 140px;
+}
+
+.contenedor {
+    display: flex;
+    width: 70%;
+    align-items: center;
+}
+
+.contenedor > iframe {
+    border: 0;
+    border-radius: 20px;
+    width: 70vh;
+    height: 30vh;
+    margin-right: 20px;
 }
 
 /********************** Divisor de contenidos **********************/
