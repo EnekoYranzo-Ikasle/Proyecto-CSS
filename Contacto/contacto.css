@@ -58,12 +58,12 @@ nav li {
     transition: 0.2s all ease-in-out;
 }
 
-nav li:nth-child(3){
+nav li:nth-child(4){
     background-color: #F4B841;
     width: 80px;
 }
 
-nav li:nth-child(3):hover {
+nav li:nth-child(4):hover {
     background-color: #d69d2a;
 }
 
@@ -76,7 +76,7 @@ nav li > a:hover {
     font-weight: bolder;
 }
 
-nav li:nth-child(3) > a{
+nav li:nth-child(4) > a{
     color: black;
 }
 
@@ -126,7 +126,7 @@ nav li:nth-child(3) > a{
     color: light-dark(var(--light-color), var(--dark-color));
 }
 
-.dynamic-navbar > input:checked ~ ul > li:nth-child(3) > a {
+.dynamic-navbar > input:checked ~ ul > li:nth-child(4) > a {
     color: black;
 }
 
@@ -137,7 +137,7 @@ nav li:nth-child(3) > a{
     border-radius: 50% 0 0 50%;
 }
 
-.dynamic-navbar > ul > li:nth-child(3){
+.dynamic-navbar > ul > li:nth-child(4){
     width: calc(100% - 25px);
 }
 
@@ -171,52 +171,6 @@ main {
     padding-bottom: 20px;
     background-color: light-dark(var(--light-bg), var(--dark-bg));
     border-radius: 50px 50px 0 0;
-}
-
-.conocenos {
-    width: 70%;
-    margin-top: 20px;
-}
-
-.nuestraMision {
-    width: 70%;
-}
-
-#textoImagen {
-    display: flex;
-}
-
-#textoImagen > img {
-    margin-right: 20px;
-    object-fit: contain;
-    filter: drop-shadow(
-        0 0 10px rgba(0, 0, 0, .8)
-    );
-}
-
-.equipo {
-    display: flex;
-    width: 98%;
-    justify-content: center;
-    text-align: center;
-    overflow: scroll;
-}
-
-.equipo img {
-    filter: grayscale(100%);
-}
-
-.equipo p {
-    margin-top: 0;
-}
-
-.equipo > span {
-   display: inline-block; 
-   transition: 0.2s all ease-in-out;
-}
-
-.equipo > span:hover{
-    transform: scale(1.1);
 }
 
 /********************** Divisor de contenidos **********************/
@@ -278,22 +232,6 @@ footer > iframe {
     }
 
     .default-navbar {
-        display: none;
-    }
-
-    #textoImagen {
-        flex-direction: column;
-    }
-
-    #textoImagen > img {
-        width: 180px;
-    }
-
-    .equipo {
-        justify-content: flex-start;
-    }
-
-    #img-No {
         display: none;
     }
 
