@@ -182,19 +182,92 @@ th {
     width: 140px;
 }
 
-.contenedor {
-    display: flex;
-    width: 70%;
-    align-items: center;
+main > p{
+    max-width: 40%;
+    text-align: center;
 }
 
-.contenedor > iframe {
+main > iframe {
     border: 0;
     border-radius: 20px;
     width: 70vh;
     height: 30vh;
-    margin-right: 20px;
+    margin: 20px;
 }
+
+/*********** Formulario de contacto + animaciones ***********/
+
+.formulario {
+    width: 100%;
+    max-width: 400px;
+    background: light-dark(#f9f9f9, var(--dark-secondary));
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.item {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    background: light-dark(#f9f9f9, var(--dark-secondary));
+    padding: 0 5px;
+    transition: 0.2s ease-in-out;
+    font-size: 14px;
+    color: light-dark(var(--light-color), var(--dark-color));
+    pointer-events: none;
+}
+
+.formulario input[type="text"], input[type="tel"], input[type="email"], textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    background: transparent;
+}
+
+.formulario input:focus ~ label, input:not(:placeholder-shown) ~ label, textarea:focus ~ label, textarea:not(:placeholder-shown) ~ label {
+    top: -8px;
+    font-size: 12px;
+}
+
+.formulario textarea {
+    resize: none;
+}
+
+.formulario input[type="submit"], input[type="reset"] {
+    width: 49.4%;
+    padding: 12px;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    color: light-dark(var(--light-color), var(--dark-color));
+    font-weight: bolder;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.formulario input[type="submit"]:hover, input[type="reset"]:hover {
+    border-color: #F4B841;
+    color: #F4B841;
+}
+
+#red {
+    color: red;
+}
+
 
 /********************** Divisor de contenidos **********************/
 
@@ -256,6 +329,28 @@ footer > iframe {
 
     .default-navbar {
         display: none;
+    }
+
+    table {
+        margin-top: 40px;
+    }
+
+    main > iframe {
+        width: 40vh;
+        height: 20vh;
+    }
+
+    main > p {
+        max-width: 100%;
+    }
+
+    .formulario {
+        width: 90%;
+    }
+
+    .formulario input[type="submit"], input[type="reset"] {
+        width: 49%;
+        font-size: 15px;
     }
 
     footer {

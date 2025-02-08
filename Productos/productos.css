@@ -214,14 +214,14 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: #333;
-    color: white;
+    background: light-dark(var(--light-secondary), var(--dark-secondary));
+    color: light-dark(var(--light-color), var(--dark-color));
     border-radius: 10px 10px 0 0;
 }
 
 .card-back {
     transform: rotateY(180deg);
-    background: #555;
+    background: light-dark(var(--light-secondary), var(--dark-secondary));;
 }
 
 .card-back > p {
@@ -230,7 +230,7 @@ main {
 }
 
 .card-back > a {
-    color: light-dark(var(--dark-color), var(--light-color));
+    color: light-dark(var(--light-color), var(--dark-color));
     font-style: italic;
 }
 

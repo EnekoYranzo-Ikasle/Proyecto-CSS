@@ -3,9 +3,6 @@
 :root {
     color-scheme: light dark;
 
-    --light-bg: linear-gradient(135deg, #e6e6e6, #dcdcdc, #a6a6a6), #e6e6e6;
-    --dark-bg: linear-gradient(135deg, #0a0a0a, #2a2a2a, #5f5f5f), #0a0a0a;
-
     --light-secondary: #d3d3d3;
     --dark-secondary: #5c5c5c;
 
@@ -54,6 +51,7 @@ img {
 
 h1 {
     font-size: 80px;
+    color: var(--dark-color);
 }
 
 a {
