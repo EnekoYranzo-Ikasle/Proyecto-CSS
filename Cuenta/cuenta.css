@@ -58,12 +58,12 @@ nav li {
     transition: 0.2s all ease-in-out;
 }
 
-nav li:nth-child(3){
+nav li:nth-child(5){
     background-color: #F4B841;
     width: 80px;
 }
 
-nav li:nth-child(3):hover {
+nav li:nth-child(5):hover {
     background-color: #d69d2a;
 }
 
@@ -76,7 +76,7 @@ nav li > a:hover {
     font-weight: bolder;
 }
 
-nav li:nth-child(3) > a{
+nav li:nth-child(5) > a{
     color: black;
 }
 
@@ -126,7 +126,7 @@ nav li:nth-child(3) > a{
     color: light-dark(var(--light-color), var(--dark-color));
 }
 
-.dynamic-navbar > input:checked ~ ul > li:nth-child(3) > a {
+.dynamic-navbar > input:checked ~ ul > li:nth-child(5) > a {
     color: black;
 }
 
@@ -137,7 +137,7 @@ nav li:nth-child(3) > a{
     border-radius: 50% 0 0 50%;
 }
 
-.dynamic-navbar > ul > li:nth-child(3){
+.dynamic-navbar > ul > li:nth-child(5){
     width: calc(100% - 25px);
 }
 
@@ -173,50 +173,137 @@ main {
     border-radius: 50px 50px 0 0;
 }
 
-.conocenos {
-    width: 70%;
+/*********** Contenedor Login / SignUp ***********/
+.contenedor-botones {
+    margin-top: 100px;
+}
+
+.boton {
+    text-decoration: none;
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 10px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el pop-up */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mostrar el pop-up con :target */
+.overlay:target {
+    display: flex;
+}
+
+.popup {
+    background: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: left;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón de cerrar */
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    text-decoration: none;
+    font-size: 24px;
+    color: #555;
+}
+
+.cerrar:hover {
+    color: black;
+}
+
+/* Estilos del formulario */
+.formulario {
     margin-top: 20px;
 }
 
-.nuestraMision {
-    width: 70%;
+.item {
+    position: relative;
+    margin-bottom: 20px;
 }
 
-#textoImagen {
-    display: flex;
+.item input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
 }
 
-#textoImagen > img {
-    margin-right: 20px;
-    object-fit: contain;
-    filter: drop-shadow(
-        0 0 10px rgba(0, 0, 0, .8)
-    );
+/* Estilo del label flotante */
+.item label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 0 5px;
+    font-size: 16px;
+    color: #666;
+    transition: 0.3s ease-in-out;
+    pointer-events: none;
 }
 
-.equipo {
-    display: flex;
-    width: 98%;
-    justify-content: center;
-    text-align: center;
-    overflow: scroll;
+/* Cuando el input está en focus o tiene texto, el label sube */
+.item input:focus ~ label,
+.item input:valid ~ label {
+    top: -10px;
+    font-size: 14px;
+    color: #007BFF;
 }
 
-.equipo img {
-    filter: grayscale(100%);
+/* Cambia el borde del input cuando está en focus */
+.item input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
-.equipo p {
-    margin-top: 0;
+.red {
+    color: red;
 }
 
-.equipo > span {
-   display: inline-block; 
-   transition: 0.2s all ease-in-out;
+/* Botón de envío */
+input[type="submit"] {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
-.equipo > span:hover{
-    transform: scale(1.1);
+input[type="submit"]:hover {
+    background: #0056b3;
 }
 
 /********************** Divisor de contenidos **********************/
@@ -277,22 +364,6 @@ footer > iframe {
     }
 
     .default-navbar {
-        display: none;
-    }
-
-    #textoImagen {
-        flex-direction: column;
-    }
-
-    #textoImagen > img {
-        width: 180px;
-    }
-
-    .equipo {
-        justify-content: flex-start;
-    }
-
-    #img-No {
         display: none;
     }
 
