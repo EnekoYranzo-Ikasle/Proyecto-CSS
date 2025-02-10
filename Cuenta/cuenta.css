@@ -173,137 +173,114 @@ main {
     border-radius: 50px 50px 0 0;
 }
 
-/*********** Contenedor Login / SignUp ***********/
-.contenedor-botones {
-    margin-top: 100px;
+/*********** Contenedor Formulario ***********/
+.container {
+    width: 400px;
+    height: auto;
 }
 
-.boton {
-    text-decoration: none;
-    background-color: #007BFF;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-size: 18px;
-    margin: 10px;
-    display: inline-block;
-    transition: 0.3s;
+.form-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
 }
 
-.boton:hover {
-    background-color: #0056b3;
-}
-
-/* Estilos para el pop-up */
-.overlay {
-    display: none;
-    position: fixed;
+.form {
+    background-color: light-dark(var(--light-secondary), var(--dark-secondary));
+    border-radius: 15px;
+    text-align: center;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+#login {
+    transform: translateX(0);
+}
+
+#signup {
+    transform: translateX(100%);
+}
+
+.form-wrapper:target #signup {
+    transform: translateX(0);
+}
+
+.form-wrapper:target #login {
+    transform: translateX(-100%);
+}
+
+a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: blue;
+}
+
+/*********** Diseño del Formulario ***********/
+.item {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-/* Mostrar el pop-up con :target */
-.overlay:target {
-    display: flex;
-}
-
-.popup {
-    background: white;
-    padding: 20px;
-    width: 90%;
-    max-width: 400px;
-    text-align: left;
-    position: relative;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Botón de cerrar */
-.cerrar {
+.form label {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    text-decoration: none;
-    font-size: 24px;
-    color: #555;
-}
-
-.cerrar:hover {
-    color: black;
-}
-
-/* Estilos del formulario */
-.formulario {
-    margin-top: 20px;
-}
-
-.item {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.item input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
-}
-
-/* Estilo del label flotante */
-.item label {
-    position: absolute;
-    left: 10px;
     top: 50%;
+    left: 35px;
     transform: translateY(-50%);
-    background: white;
+    background: light-dark(#f9f9f9, var(--dark-secondary));
     padding: 0 5px;
-    font-size: 16px;
-    color: #666;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
+    font-size: 14px;
+    color: light-dark(var(--light-color), var(--dark-color));
     pointer-events: none;
 }
 
-/* Cuando el input está en focus o tiene texto, el label sube */
-.item input:focus ~ label,
-.item input:valid ~ label {
-    top: -10px;
+.form input[type="email"], input[type="password"], input[type="text"] {
+    padding: 12px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 14px;
-    color: #007BFF;
+    outline: none;
+    background: transparent;
 }
 
-/* Cambia el borde del input cuando está en focus */
-.item input:focus {
-    border-color: #007BFF;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+.form input:focus ~ label, input:not(:placeholder-shown) ~ label{
+    top: -8px;
+    font-size: 12px;
 }
 
-.red {
-    color: red;
-}
-
-/* Botón de envío */
-input[type="submit"] {
-    background: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    cursor: pointer;
+.form input[type="submit"] {
+    width: 50%;
+    padding: 12px;
+    margin-top: 15px;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    transition: 0.3s;
+    text-align: center;
+    color: light-dark(var(--light-color), var(--dark-color));
+    font-weight: bolder;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-input[type="submit"]:hover {
-    background: #0056b3;
+.form input[type="submit"]:hover {
+    border-color: #F4B841;
+    color: #F4B841;
+}
+
+#red {
+    color: red;
 }
 
 /********************** Divisor de contenidos **********************/

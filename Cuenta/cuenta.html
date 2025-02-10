@@ -33,53 +33,41 @@
         </div>
     </nav>
     <main>
-        <div class="contenedor-botones">
-            <a href="#popup-login" class="boton">Iniciar Sesión</a>
-            <a href="#popup-registro" class="boton">Crear Cuenta</a>
-        </div>
-
-        <!-- POP-UP LOGIN -->
-        <div id="popup-login" class="overlay">
-            <div class="popup">
-                <a href="#" class="cerrar">&times;</a>
-                <h3>Iniciar Sesión</h3>
-                <form class="formulario">
+        <div class="container">
+            <div id="form-container" class="form-wrapper">
+                <form id="login" class="form">
+                    <h2>Iniciar Sesión</h2>
                     <div class="item">
-                        <input type="email" id="login-email" required>
-                        <label for="login-email">Email <span class="red">*</span></label>
+                        <input type="email" id="correo" placeholder="" required>
+                        <label for="correo">Correo</label>
                     </div>
                     <div class="item">
-                        <input type="password" id="login-password" required>
-                        <label for="login-password">Contraseña <span class="red">*</span></label>
-                    </div>
-                    <input type="submit" value="Iniciar Sesión">
+                        <input type="password" id="contraseña" placeholder="" required>
+                        <label for="contraseña">Constraseña</label>
+                    </div><br>
+                    <input type="submit" value="Entrar">
+                    <a href="#form-container">¿No tienes cuenta? Regístrate</a>
                 </form>
-            </div>
-        </div>
-
-        <!-- POP-UP REGISTRO -->
-        <div id="popup-registro" class="overlay">
-            <div class="popup">
-                <a href="#" class="cerrar">&times;</a>
-                <h3>Crear Cuenta</h3>
-                <form class="formulario">
+    
+                <form id="signup" class="form">
+                    <h2>Registrarse</h2>
                     <div class="item">
-                        <input type="text" id="registro-nombre" required>
-                        <label for="registro-nombre">Nombre <span class="red">*</span></label>
+                        <input type="text" id="usuario" placeholder="">
+                        <label for="usuario">Usuario</label>
                     </div>
                     <div class="item">
-                        <input type="email" id="registro-email" required>
-                        <label for="registro-email">Email <span class="red">*</span></label>
+                        <input type="email" id="correo" placeholder="">
+                        <label for="correo">Correo</label>
                     </div>
                     <div class="item">
-                        <input type="password" id="registro-password" required>
-                        <label for="registro-password">Contraseña <span class="red">*</span></label>
+                        <input type="password" id="constraseña" placeholder="">
+                        <label for="contraseña">Constraseña</label>
                     </div>
                     <input type="submit" value="Crear Cuenta">
+                    <a href="#">¿Ya tienes cuenta? Inicia sesión</a>
                 </form>
             </div>
-        </div>
-
+        </div>  
     </main>
     <div class="separador">
         <hr>
