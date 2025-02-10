@@ -166,7 +166,7 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: auto;
+    height: 65vh;
     margin-top: 100px;
     padding-bottom: 20px;
     background-color: light-dark(var(--light-bg), var(--dark-bg));
@@ -177,6 +177,8 @@ main {
 .container {
     width: 400px;
     height: auto;
+    margin: 60px;
+    margin-top: 8%;
 }
 
 .form-wrapper {
@@ -214,11 +216,16 @@ main {
     transform: translateX(-100%);
 }
 
-a {
+.form > a {
     display: block;
     margin-top: 10px;
     text-decoration: none;
-    color: blue;
+    color: light-dark(var(--light-color), var(--dark-color));
+    transition: all 0.2s ease-in-out;
+}
+
+.form > a:hover {
+    color: #F4B841;
 }
 
 /*********** Diseño del Formulario ***********/
@@ -243,7 +250,7 @@ a {
     pointer-events: none;
 }
 
-.form input[type="email"], input[type="password"], input[type="text"] {
+.form input[type="email"], input[type="password"] {
     padding: 12px;
     width: 80%;
     border: 1px solid #ccc;
@@ -258,10 +265,14 @@ a {
     font-size: 12px;
 }
 
+.form input:focus {
+    border-color: #F4B841;
+}
+
 .form input[type="submit"] {
     width: 50%;
     padding: 12px;
-    margin-top: 15px;
+    margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
@@ -342,6 +353,10 @@ footer > iframe {
 
     .default-navbar {
         display: none;
+    }
+
+    .container {
+        margin-top: 30%;
     }
 
     footer {
