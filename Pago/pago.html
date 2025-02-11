@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Hardware, Soporte, Software, Instalación equipos informáticos, educación">
+    <meta name="author" content="Eneko Yranzo Redondo">
+    <title>BasqueTech - Cuenta</title>
+    <link rel="stylesheet" href="pago.css">
+    <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <div class="persPedido">
+            <img src="../img/TargetaBanco.png" alt="Targeta">
+        </div>
+        <form action="" class="formulario">
+            <div id="inputs">
+                <div class="DatosBancarios">
+                    <div class="item">
+                        <input type="text" id="numTargeta" required placeholder="" maxlength="16">
+                        <label for="numTargeta">Numero de Targeta<span id="red">*</span></label>
+                    </div>
+                    <div id="datos">
+                        <div class="item">
+                            <input type="text" id="mes" required placeholder="" maxlength="2">
+                            <label for="mes">MM<span id="red">*</span></label>
+                        </div>
+                        <span id="divisor">/</span>
+                        <div class="item">
+                            <input type="text" id="año" required placeholder="" maxlength="2">
+                            <label for="mes">YY<span id="red">*</span></label> 
+                        </div>
+                        <div class="item" id="ccvCode">
+                            <input type="text" id="ccv" required placeholder="" maxlength="3">
+                            <label for="ccv">CCV<span id="red">*</span></label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <input type="text" id="titular" required placeholder="">
+                        <label for="titular">Titular de la Targeta<span id="red">*</span></label>
+                    </div>
+                    <div class="item" id="guardar">
+                        <input type="checkbox" id="guardarDatos">
+                        <label for="guardarDatos">Guardar detalles para proximas compras</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
