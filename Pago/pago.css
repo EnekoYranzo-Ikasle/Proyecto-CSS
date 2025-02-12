@@ -9,10 +9,12 @@
     --light-bg: #e6e6e6;
     --light-color: black;
     --light-secondary: #d3d3d3;
+    --light-third: #c0c0c0;
 
     --dark-bg: #2e2e2e;
     --dark-color:  #d1d1d1;
-    --dark-secondary: #5c5c5c; 
+    --dark-secondary: #5c5c5c;
+    --dark-third: #4b4a4a;
 }
 
 html {
@@ -58,7 +60,7 @@ main {
 
 .formulario {
     position: absolute;
-    width: 450px;
+    max-width: 450px;
     height: 700px;
     top: 150px;
     background-color: light-dark(var(--light-secondary), var(--dark-secondary));
@@ -121,9 +123,54 @@ main {
 #guardar {
     display: flex;
     justify-content: center;
-    position: relative;
+    margin-top: 20px;
+    margin-left: 25px;
 }
 
+#guardar span {
+    margin: 3px 0 0 10px;
+}
+
+/*********** Envio ***********/
+.envio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.envio > p {
+    margin-top: 0;
+}
+
+.envio > div {
+    display: flex;
+    margin-left: 25px;
+}
+
+.envio > div > span{
+    margin: 6px;
+    margin-left: 2px;
+}
+
+/*********** Terminos y condiciones ***********/
+.terminos {
+    display: flex;
+    justify-content: center;
+    margin-left: 25px;
+}
+
+.terminos span {
+    margin: 3px 0 0 10px;
+}
+
+/*********** Pagar ***********/
+#pagar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/*********** Diseño formulario ***********/
 .formulario label {
     position: absolute;
     top: 50%;
@@ -137,6 +184,10 @@ main {
     pointer-events: none;
 }
 
+.formulario input:focus {
+    border-color: #F4B841;
+}
+
 .formulario input[type="text"] {
     padding: 12px;
     width: 80%;
@@ -147,51 +198,160 @@ main {
     background: transparent;
 }
 
-#guardar input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
+input[type="checkbox"] {
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     cursor: pointer;
     margin: 0;
-    position: static;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in;
 }
 
-#guardar label {
-    display: inline-block;
-    position: static !important;
+input[type="radio"]{
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    transition: background-color 0.2s ease-in;
 }
 
+input[type="checkbox"]:checked, input[type="radio"]:checked {
+    background-color: darkslategray;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' %3E%3Cpath d='M20.285 6.707a1 1 0 010 1.414l-10 10a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 15.586l9.293-9.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+}
+
+/*********** Funcion Label ***********/
 .formulario input:focus ~ label, input:not(:placeholder-shown) ~ label{
     top: -8px;
     font-size: 12px;
 }
 
-.formulario input:focus {
-    border-color: #F4B841;
-}
-
 /*********** Diseño Submit ***********/
 .formulario input[type="submit"] {
-    width: 50%;
+    width: 80%;
     padding: 12px;
     margin-top: 10px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 5px;
     font-size: 16px;
     text-align: center;
-    color: light-dark(var(--light-color), var(--dark-color));
+    color: light-dark(var(--dark-color), var(--light-color));
     font-weight: bolder;
-    background: transparent;
+    background-color: #F4B841;
     outline: none;
     transition: border-color 0.2s ease-in-out, color 0.3s ease-in-out;
     cursor: pointer;
 }
 
 .formulario input[type="submit"]:hover {
-    border-color: #F4B841;
-    color: #F4B841;
+    background-color: #e6ad3b;
 }
 
 /*********** Diseño obligatorio ***********/
 #red {
     color: red;
+    margin: 0;
+}
+
+/********************** Divisor de contenidos **********************/
+.separador {
+    display: flex;
+    justify-content: center;
+}
+
+.separador > hr {
+    margin: 0;
+    width: 40%;
+    height: 5px;
+    border: 0;
+    border-radius: 20px;
+    margin: 30px 0 30px 0;
+    background-color: light-dark(var(--light-bg), var(--dark-bg));
+}
+
+/********************** PopUp Compra Realizada **********************/
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    box-shadow: 20px 20px 50px grey;
+}
+
+#popup:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    background-color: light-dark(var(--light-third), var(--dark-third));
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#popup a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+#popup #descarga {
+    color: white;
+}
+
+#popup #volver {
+    width: 30%;
+    padding: 10px;
+    margin-top: 40px;
+    color: white;
+    background-color: red;
+    border-radius: 20px;
+}
+
+/********************** Web Responsive **********************/
+@media screen and (max-width: 670px) {
+    .persPedido > img{
+        width: 320px;
+    }
+
+    #inputs {
+        margin-top: 100px;
+    }
+
+    .formulario {
+        height: 665px;
+    }
+
+    .separador > hr {
+        margin: 15px;
+    }
+
+    .popup-content {
+        width: 100%;
+    }
+
+    #popup #volver {
+        width: 50%;
+    }
 }

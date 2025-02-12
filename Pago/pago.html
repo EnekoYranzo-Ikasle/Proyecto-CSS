@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Hardware, Soporte, Software, Instalación equipos informáticos, educación">
     <meta name="author" content="Eneko Yranzo Redondo">
-    <title>BasqueTech - Cuenta</title>
+    <title>BasqueTech - Pago</title>
     <link rel="stylesheet" href="pago.css">
     <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
 </head>
@@ -14,7 +14,7 @@
         <div class="persPedido">
             <img src="../img/TargetaBanco.png" alt="Targeta">
         </div>
-        <form action="" class="formulario">
+        <form action="#popup" class="formulario">
             <div id="inputs">
                 <div class="DatosBancarios">
                     <div class="item">
@@ -40,13 +40,39 @@
                         <input type="text" id="titular" required placeholder="">
                         <label for="titular">Titular de la Targeta<span id="red">*</span></label>
                     </div>
-                    <div class="item" id="guardar">
-                        <input type="checkbox" id="guardarDatos">
-                        <label for="guardarDatos">Guardar detalles para proximas compras</label>
+                    <div id="guardar">
+                        <input type="checkbox">
+                        <span>Guardar detalles para proximas compras</span>
                     </div>
+                </div>
+                <div class="separador"><hr></div>
+                <div class="envio">
+                    <p>Selecione una opción de envio</p>
+                    <div>
+                        <input type="radio" name="envio"><span>Envio a domicilio</span>
+                        <input type="radio" name="envio"><span>Recogida en tienda</span>
+                    </div>
+                </div>
+                <div class="separador"><hr></div>
+                <div class="terminos">
+                    <input type="checkbox" re>
+                    <span>He leido y acepto la politica de Privacidad<span id="red">*</span></span>
+                </div>
+                <div id="pagar">
+                    <input type="submit" value="Pagar">
                 </div>
             </div>
         </form>
+<!--Pop Up de Pedido realizado-->
+        <div id="popup">
+            <div class="popup-content">
+                <h2>Pedido Realizado Correctamente</h2>
+                <h4>Gracias por confiar en BasqueTech</h4>
+                <img src="../img/download-Button.gif" alt="Dowload gif">
+                <a href="../Documentos/Factura-BasqueTech.pdf" download="" id="descarga">Descargar Factura</a>
+                <a href="../Inicio/inicio.html" id="volver">Volver a inicio</a>
+            </div>
+        </div>
     </main>
 </body>
 </html>

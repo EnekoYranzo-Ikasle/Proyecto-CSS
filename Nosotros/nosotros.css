@@ -199,7 +199,7 @@ main {
     width: 98%;
     justify-content: center;
     text-align: center;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .equipo img {
@@ -290,6 +290,7 @@ footer > iframe {
 
     .equipo {
         justify-content: flex-start;
+        overflow: scroll;
     }
 
     #img-No {
