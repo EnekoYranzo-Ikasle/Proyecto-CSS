@@ -234,7 +234,7 @@ main > iframe {
     background: transparent;
 }
 
-.formulario input:focus ~ label, input:not(:placeholder-shown) ~ label, textarea:focus ~ label, textarea:not(:placeholder-shown) ~ label {
+.formulario input:focus ~ label, input:valid ~ label, textarea:focus ~ label, textarea:valid ~ label {
     top: -8px;
     font-size: 12px;
 }

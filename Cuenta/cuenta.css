@@ -260,7 +260,7 @@ main {
     background: transparent;
 }
 
-.form input:focus ~ label, input:not(:placeholder-shown) ~ label{
+.form input:focus ~ label, input:valid ~ label{
     top: -8px;
     font-size: 12px;
 }
